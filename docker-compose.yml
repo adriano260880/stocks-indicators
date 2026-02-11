@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  indicators:
+    image: adriano260880/stocks-indicators:latest
+    container_name: indicators-app
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
