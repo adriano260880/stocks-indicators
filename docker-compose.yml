@@ -1,9 +1,22 @@
-version: "3.9"
 
 services:
   indicators:
-    image: adriano260880/stocks-indicators:latest
+    image: adriano260880/indicators:latest
     container_name: indicators-app
     ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  stocks-indicators:
+    image: adriano260880/stocks-indicators:latest
+    container_name: stocks-indicators-app
+    ports:
       - "8081:8081"
+    volumes:
+      - ./h2-data:/data
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - INDICATORS_API_URL=http://indicators:8080
+    depends_on:
+      - indicators
     restart: unless-stopped
