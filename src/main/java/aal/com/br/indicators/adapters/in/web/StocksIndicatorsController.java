@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class StocksIndcatorsController {
+public class StocksIndicatorsController {
 
     private final IndicatorsUseCase indicatorsUseCase;
 
-    public StocksIndcatorsController(IndicatorsUseCase indicatorsUseCase) {
+    public StocksIndicatorsController(IndicatorsUseCase indicatorsUseCase) {
         this.indicatorsUseCase = indicatorsUseCase;
     }
     @PostMapping("stocks")
