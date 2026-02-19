@@ -12,10 +12,7 @@ services:
     container_name: stocks-indicators-app
     ports:
       - "8081:8081"
-    volumes:
-      - ./data:/data
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
       - INDICATORS_API_URL=http://indicators:8080
     depends_on:
       - indicators
